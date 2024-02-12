@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
@@ -24,6 +25,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {SpringConfig.class})
+@ActiveProfiles("dev")
 class MensajeRepositoryTest {
 
     @Autowired
@@ -43,7 +45,7 @@ class MensajeRepositoryTest {
         Usuario remitente = repoUsuario.obtener(1);
         Usuario destinatario = repoUsuario.obtener(2);
 
-        Mensaje message = new Mensaje(null, remitente, destinatario, "De acuerdo Juana. Un saludo.", LocalDate.now());
+        Mensaje message = new Mensaje(null, remitente, destinatario, "De acuerdo Juana. Un saludo desde dev.", LocalDate.now());
 
         repoMensaje.crear(message);
         assertThat(message, notNullValue());

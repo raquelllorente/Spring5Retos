@@ -9,6 +9,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @PropertySource("classpath:application.properties")
+@PropertySource("classpath:application-prod.properties")
+@PropertySource("classpath:application-dev.properties")
 @ComponentScan(basePackages = {"com.banana.bananawhatsapp.persistencia", "com.banana.bananawhatsapp.servicios"})
 @EntityScan("com.banana.bananawhatsapp.modelos")
 @EnableJpaRepositories(basePackages = {"com.banana.bananawhatsapp.persistencia"})
