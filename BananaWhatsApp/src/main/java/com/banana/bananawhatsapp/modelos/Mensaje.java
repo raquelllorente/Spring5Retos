@@ -16,11 +16,13 @@ public class Mensaje {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-//    @ManyToOne
-//    @JoinColumn(name = "remitente_id")
+
+    @ManyToOne
+    @JoinColumn(name = "from_user")
     private Usuario remitente;
-//    @ManyToOne
-//    @JoinColumn(name = "destinatario_id")
+
+    @ManyToOne
+    @JoinColumn(name = "to_user")
     private Usuario destinatario;
 
     private String cuerpo;

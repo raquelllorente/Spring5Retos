@@ -16,6 +16,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Set;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -26,7 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @ContextConfiguration(classes = {SpringConfig.class})
 class UsuarioRepositoryTest {
     @Autowired
-    UsuarioRepository repo;
+    IUsuarioRepository repo;
 
     IMensajeRepository mensajeRepository;
 
@@ -89,7 +90,7 @@ class UsuarioRepositoryTest {
             repo.borrar(user);
         });
     }
-/*
+
     @Test
     @Order(7)
     void dadoUnUsuarioValido_cuandoObtenerPosiblesDestinatarios_entoncesLista() throws Exception {
@@ -101,6 +102,7 @@ class UsuarioRepositoryTest {
         assertTrue(conjuntoDestinatarios.size() <= numPosibles);
     }
 
+
     @Test
     @Order(8)
     void dadoUnUsuarioNOValido_cuandoObtenerPosiblesDestinatarios_entoncesExcepcion() throws Exception {
@@ -111,6 +113,6 @@ class UsuarioRepositoryTest {
         });
 
     }
-*/
+
 
 }

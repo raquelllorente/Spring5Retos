@@ -21,9 +21,9 @@ public class Usuario {
     private String email;
     private LocalDate alta;
     private boolean activo;
-    @OneToMany(mappedBy = "remitente", cascade={CascadeType.ALL})
+    @OneToMany(mappedBy = "remitente", cascade={CascadeType.ALL}, orphanRemoval = true)
     private List<Mensaje> mensajesEnviados;
-    @OneToMany(mappedBy = "destinatario", cascade={CascadeType.ALL})
+    @OneToMany(mappedBy = "destinatario", cascade={CascadeType.ALL}, orphanRemoval = true)
     private List<Mensaje> mensajesRecibidos;
 
     private boolean validarNombre() {

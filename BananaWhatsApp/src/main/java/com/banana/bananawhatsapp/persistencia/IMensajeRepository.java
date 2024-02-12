@@ -10,6 +10,7 @@ public interface IMensajeRepository {
     public Mensaje crear(Mensaje mensaje) throws SQLException;
 
     public List<Mensaje> obtener(Usuario usuario) throws SQLException;
+    public List<Mensaje> obtenerEntre(Usuario remitente, Usuario destinatario) throws SQLException;
 
     public boolean borrarEntre(Usuario remitente, Usuario destinatario) throws Exception;
 
